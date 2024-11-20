@@ -1,0 +1,16 @@
+name: Deploy INT2
+on:
+  pull_request:
+  
+jobs:
+  test-artifacts-list:
+    runs-on: ubuntu-latest
+    steps:
+    - name: listing
+      id: list
+      uses: yakubique/list-artifacts@v1.1
+      with:
+        name: test-*
+    - name: checking
+      if: steps.list.outputs.result
+      run: echo "hello"
