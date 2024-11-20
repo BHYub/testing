@@ -9,8 +9,10 @@ jobs:
     - name: listing
       id: list
       uses: yakubique/list-artifacts@v1.1
+      env:
+        CLUSTER_NAME: gis-team-1
       with:
-        name: test-*
+        name: repo-changes-final-${{ env.CLUSTER_NAME }}
     - name: checking
       if: steps.list.outputs.artifacts != ''
       run: echo "yooooo" #echo "${{ steps.list.outputs.result }}"
