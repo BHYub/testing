@@ -13,4 +13,4 @@ jobs:
         name: test-*
     - name: checking
       if: steps.list.outputs.result
-      run: echo "hello"
+      run: echo "${{ steps.list.outputs.result }}"
