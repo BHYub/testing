@@ -15,7 +15,7 @@ jobs:
         name: repo-changes-final-${{ env.CLUSTER_NAME }}
     - name: checking
       id: check
-      if: steps.list.outputs.artifacts == ''
+      if: steps.list.outputs.artifacts != ''
       run: echo "yooooo" #echo "${{ steps.list.outputs.result }}"
     - name: Extract US changes
       if: steps.check.outcome == 'success'
