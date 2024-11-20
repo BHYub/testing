@@ -12,5 +12,5 @@ jobs:
       with:
         name: test-*
     - name: checking
-      if: steps.list.outputs.result
-      run: echo "${{ steps.list.outputs.result }}"
+      if: steps.list.outputs.artifacts != ''
+      run: echo "yooooo" #echo "${{ steps.list.outputs.result }}"
